@@ -10,6 +10,7 @@ function handleTicketChange(ticket, isIncrease) {
     }
 
     document.getElementById(ticket + '-count').value = ticketNewCount;
+    document.getElementById(ticket + '-totalCount').innerText = ticketNewCount;
 
     let ticketTotal = 0;
 
@@ -21,6 +22,7 @@ function handleTicketChange(ticket, isIncrease) {
         ticketTotal = ticketNewCount * 100;
     }
     document.getElementById(ticket + '-total').innerText = ticketTotal;
+
     calculateTotal();
 }
 
@@ -48,7 +50,5 @@ function getInputValue(ticket) {
 
 function handleSubmit() {
     document.getElementById('booking-form-container').style.display = 'none';
-    document.getElementById('confirmation-area').style.display = 'block';
+    document.getElementById('summary-area').style.display = 'block';
 }
-
-
