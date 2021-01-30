@@ -1,3 +1,4 @@
+//Main function
 function handleTicketChange(ticket, isIncrease) {
     const ticketCount = getInputValue(ticket);
 
@@ -13,11 +14,9 @@ function handleTicketChange(ticket, isIncrease) {
     document.getElementById(ticket + '-totalCount').innerText = ticketNewCount;
 
     let ticketTotal = 0;
-
     if (ticket == 'firstClass') {
         ticketTotal = ticketNewCount * 150;
     }
-
     if (ticket == 'economy') {
         ticketTotal = ticketNewCount * 100;
     }
@@ -26,6 +25,7 @@ function handleTicketChange(ticket, isIncrease) {
     calculateTotal();
 }
 
+// calculate total function
 function calculateTotal() {
     const firstClassCount = getInputValue('firstClass');
     const economyCount = getInputValue('economy');
@@ -42,12 +42,14 @@ function calculateTotal() {
     document.getElementById('order-total').innerText = total;
 }
 
+//get input value function
 function getInputValue(ticket) {
     const ticketInput = document.getElementById(ticket + '-count');
     const ticketCount = parseInt(ticketInput.value);
     return ticketCount;
 }
 
+//Submit button handler function
 function handleSubmit() {
     document.getElementById('booking-form-container').style.display = 'none';
     document.getElementById('summary-area').style.display = 'block';
